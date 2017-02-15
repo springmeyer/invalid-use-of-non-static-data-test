@@ -1,0 +1,27 @@
+language: generic
+
+script:
+  - make
+
+matrix:
+  include:
+    - os: linux
+      sudo: false
+      addons:
+        apt:
+          sources: [ 'ubuntu-toolchain-r-test' ]
+          packages: [ 'libstdc++-4.8-dev', 'g++-4.8' ]
+      env: CXX=g++-4.8
+    - os: linux
+      sudo: false
+      addons:
+        apt:
+          sources: [ 'ubuntu-toolchain-r-test' ]
+          packages: [ 'libstdc++-4.9-dev', 'g++-4.9' ]
+      env: CXX=g++-4.9
+    - os: osx
+      osx_image: xcode7
+      env: CXX=clang++
+    - os: osx
+      osx_image: xcode8.2
+      env: CXX=clang++

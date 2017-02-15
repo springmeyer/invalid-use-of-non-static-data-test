@@ -1,0 +1,1 @@
+Testcase for https://github.com/Project-OSRM/osrm-backend/issues/3719
